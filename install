@@ -1,0 +1,56 @@
+#!/bin/sh
+
+DOTFILES=`pwd`
+cd "$HOME"
+
+if [ -e "$HOME/.tmux.conf" ]; then
+    echo "$HOME/.tmux.conf already exists."
+else
+    ln -s "$DOTFILES/tmux.conf" "$HOME/.tmux.conf"
+    echo "Configured tmux."
+fi
+
+if [ -e "$HOME/.oh-my-zsh" ]; then
+    echo "oh-my-zsh is already installed."
+else
+    ZSH=$HOME/.oh-my-zsh
+    if [ -d "$ZSH" ]; then
+        echo "oh-my-zsh is already installed"
+    else
+        git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git "$ZSH"
+        echo "Successfully cloned oh-my-zsh."
+    fi
+fi
+
+if [ -e "$HOME/.zshrc" ]; then
+    echo "$HOME/.zshrc already exists."
+else
+    ln -s "$DOTFILES/zshrc" "$HOME/.zshrc"
+    echo "Configured oh-my-zsh."
+fi
+
+if [ -e "$HOME/.oh-my-zsh-custom" ]; then
+    echo "$HOME/.oh-my-zsh-custom already exists."
+else
+    ln -s "$DOTFILES/oh-my-zsh-custom" "$HOME/.oh-my-zsh-custom"
+    echo "Configured oh-my-zsh custom dir."
+fi
+
+if [ -e "$HOME/.vim" ]; then
+    echo "$HOME/.vim  already exists."
+elif [ -e "$HOME/.vimrc" ]; then
+    echo "$HOME/.vimrc already exists."
+else
+    ln -s "$DOTFILES/vim" "$HOME/.vim"
+    ln -s "$DOTFILES/vimrc" "$HOME/.vimrc"
+    echo "Configured vim. Run :PlugInstall to install plugins."
+fi
+
+if [ -e "$HOME/.ctags" ];then
+    echo "$HOME/.ctags already exists"
+else
+    ln -s "$DOTFILES/ctags" "$HOME/.ctags"
+    echo "Configured ctags."
+fi
+
+echo "Enjoy!"

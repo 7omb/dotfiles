@@ -1,0 +1,8 @@
+--recurse=yes
+
+--exclude=.git
+--exclude=log
+--exclude=tmp
+--exclude=node_modules
+
+--python-kinds=-i
