@@ -41,10 +41,15 @@ Plug 'mileszs/ack.vim'
 Plug 'szw/vim-tags'
 Plug 'majutsushi/tagbar'
 Plug 'ervandew/supertab'
-Plug 'davidhalter/jedi-vim'
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'w0rp/ale'
+
+" Python
+Plug 'davidhalter/jedi-vim'
+
+" Haskell
+Plug 'neovimhaskell/haskell-vim'
 
 call plug#end()
 

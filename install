@@ -53,4 +53,13 @@ else
     echo "Configured ctags."
 fi
 
+if ! command -v ghc; then
+    echo "ghc is not installed"
+elif [ -e "$HOME/.ghci" ]; then
+    echo "$HOME/.ghci already exists"
+else
+    ln -s "$DOTFILES/ghci" "$HOME/.ctags"
+    echo "Configured ghci"
+fi
+
 echo "Enjoy!"
