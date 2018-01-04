@@ -317,6 +317,7 @@ let g:UltiSnipsJumpBackwardTrigger="<C-z>"
 let g:airline#extensions#ale#enabled = 1    " show errors in airline
 
 " airline
+let g:airline_theme='badwolf'
 let g:airline#extensions#tabline#enabled=1  " use bufferline
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}

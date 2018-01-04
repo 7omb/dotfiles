@@ -22,7 +22,10 @@ bindkey fd vi-cmd-mode
 bindkey '^N' clear-screen
 
 [ -d "$HOME/.local/bin" ] && export PATH="$PATH:$HOME/.local/bin"
-[ -f ~/.fzf.zsh ] && source "$HOME/.fzf.zsh"
+
+function ddif {
+    echo $(date -d "$1 days")
+}
 
 # show mode in shell
 function zle-line-init zle-keymap-select {
