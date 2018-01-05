@@ -214,7 +214,7 @@ map * <Plug>(asterisk-z*)
 map # <Plug>(asterisk-z#)
 
 " clear highlights
-nnoremap <leader>c :nohlsearch<cr>
+nnoremap <silent> <leader>c :nohlsearch<cr>
 
 " reformat text easily
 nnoremap <leader>w gqip
@@ -230,7 +230,7 @@ nnoremap <leader>l :Lines<cr>
 nnoremap <leader>s :w<cr>
 
 " Tagbar
-nnoremap <leader>t :TagbarToggle<cr>
+nnoremap <silent> <leader>t :TagbarToggle<cr>
 
 " Open NERDtree
 nnoremap <silent> <leader><leader> :NERDTreeToggle<cr>
@@ -306,7 +306,7 @@ nnoremap [r :ALEPreviousWrap<cr>
 if executable('ag')
     let g:ackprg = 'ag --vimgrep'
 endif
-nnoremap <leader>a :Ack<space>
+nnoremap <leader>a :Ack!<space>
 
 " --- Plugin Settings --------------------------------------------------
 " NERDTree
