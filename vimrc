@@ -45,11 +45,22 @@ Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'w0rp/ale'
 
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
 " Python
-Plug 'davidhalter/jedi-vim'
+Plug 'zchee/deoplete-jedi', { 'for': 'python' }
 
 " Haskell
-Plug 'neovimhaskell/haskell-vim'
+Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
+Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' } | Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
+Plug 'Twinside/vim-hoogle', { 'for': 'haskell' }
 
 call plug#end()
 
@@ -306,12 +317,11 @@ let NERDTreeShowBookmarks=1
 " make quitting when only NERDtree is open actually quit
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" deoplete.
+let g:deoplete#enable_at_startup=1
+
 " supertab
 let g:SuperTabDefaultCompletionType="context"
-
-" jedi-vim
-let g:jedi#popup_select_first=0
-autocmd FileType python setlocal completeopt-=preview   " don't show docstring on completion
 
 " ultisnippets
 let g:UltiSnipsExpandTrigger="<tab>"

@@ -16,6 +16,19 @@ Open vim and run:
 
 ## Dependencies
 
+- Vim 8
+- Python 3 with neovim
+- ag
 - ctags
+
+### Python
+
 - jedi
 - pylint
+
+### Haskell
+
+- stack
+- ghc-mod
+- hlint
+- hoogle
