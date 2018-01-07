@@ -14,21 +14,30 @@ Open vim and run:
 
     :PlugInstall
 
-## Dependencies
+## Vim dependencies
 
 - Vim 8
 - Python 3 with neovim
 - ag
 - ctags
 
-### Python
+Python:
 
-- jedi
-- pylint
+    pip install jedi pylint
 
-### Haskell
+Haskell:
 
-- stack
-- ghc-mod
-- hlint
-- hoogle
+    stack install ghc-mod hlint hoogle
+
+## Spacemacs dependencies
+
+- ag
+
+Python:
+
+    pip install flake8
+
+Haskell:
+
+    stack install hlint hasktags hoogle ghc-mod intero
+    stack --resolver nightly-2017-01-06 install apply-refact

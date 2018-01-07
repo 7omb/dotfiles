@@ -46,6 +46,14 @@ else
     echo "Configured vim. Run :PlugInstall to install plugins."
 fi
 
+if [ -e "$HOME/.spacemacs" -o -e "$HOME/.spacemacs.d" ]; then
+    echo "Spacemacs configuration alreay exists"
+else
+    ln -s "$DOTFILES/spacemacs.d" "$HOME/.spacemacs.d"
+    git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+    echo "Configured and downloaded Spacemacs."
+fi
+
 if [ -e "$HOME/.ctags" ];then
     echo "$HOME/.ctags already exists"
 else
