@@ -32,6 +32,9 @@ Haskell:
 ## Spacemacs dependencies
 
 - ag
+- shellcheck
+- nodejs
+- npm
 
 Python:
 
@@ -41,3 +44,9 @@ Haskell:
 
     stack install hlint hasktags hoogle ghc-mod intero
     stack --resolver nightly-2017-01-06 install apply-refact
+
+JavaScript:
+
+    npm install -g tern
+    npm install -g js-beautify
+    npm install -g eslint
