@@ -1,7 +1,5 @@
 [[ $- != *i* ]] && return
 
-[[ $TMUX == "" ]] && tmux -2 new-session -A -s sesh
-
 export ZSH=$HOME/.oh-my-zsh
 export EDITOR=vim
 
