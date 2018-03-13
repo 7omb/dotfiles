@@ -41,8 +41,6 @@ Plug 'mileszs/ack.vim'
 Plug 'szw/vim-tags'
 Plug 'majutsushi/tagbar'
 Plug 'ervandew/supertab'
-Plug 'sirver/ultisnips'
-Plug 'honza/vim-snippets'
 Plug 'w0rp/ale'
 
 if has('nvim')
@@ -176,7 +174,7 @@ if v:version > 703 || v:version == 703 && has('patch541')
 endif
 
 " --- Key Bindings ---------------------------------------------------
-let mapleader=','
+let mapleader=' '
 let maplocalleader=' '
 
 " easy escape with fd
@@ -186,10 +184,6 @@ inoremap <esc> <nop>
 " behave nicely with wrapped lines
 nnoremap j gj
 nnoremap k gk
-
-" save some keystrokes
-nnoremap ; :
-vnoremap ; :
 
 " use tab to jump to matching (, [, {,...
 nnoremap <tab> %
@@ -214,35 +208,34 @@ map * <Plug>(asterisk-z*)
 map # <Plug>(asterisk-z#)
 
 " clear highlights
-nnoremap <silent> <leader>c :nohlsearch<cr>
+nnoremap <silent> <leader>sc :nohlsearch<cr>
 
 " reformat text easily
 nnoremap <leader>w gqip
 
 " find any file in this git repo with ?
-nnoremap ? :Files<cr>
+nnoremap <leader>pf :Files<cr>
 
 " buffers/window handling
-nnoremap <leader>b :Buffers<cr>
+nnoremap <leader>bb :Buffers<cr>
 nnoremap <leader>l :Lines<cr>
 
 " easily save files
-nnoremap <leader>s :w<cr>
+nnoremap <leader>fs :w<cr>
 
 " Tagbar
-nnoremap <silent> <leader>t :TagbarToggle<cr>
+nnoremap <silent> <leader>bi :TagbarToggle<cr>
 
 " Open NERDtree
-nnoremap <silent> <leader><leader> :NERDTreeToggle<cr>
+nnoremap <silent> <leader>bt :NERDTreeToggle<cr>
 " Find current file in nerdtree
-nnoremap <leader>f :NERDTreeFind<cr>
-nnoremap <leader>e :edit <C-r>=expand('%:p:h') . '/'<cr>
+nnoremap <leader>pf :NERDTreeFind<cr>
 
 " gundo tree
-nnoremap <leader>u :GundoToggle<cr>
+nnoremap <leader>au :GundoToggle<cr>
 
 " Flip between files with <leader>.
-noremap <leader>. :b#<cr>
+noremap <leader><tab> :b#<cr>
 
 " Navigation with C-h/j/k/l in tmux and vim
 if exists('$TMUX')
@@ -323,10 +316,10 @@ let g:deoplete#enable_at_startup=1
 " supertab
 let g:SuperTabDefaultCompletionType="context"
 
-" ultisnippets
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<C-b>"
-let g:UltiSnipsJumpBackwardTrigger="<C-z>"
+" " ultisnippets
+" let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsJumpForwardTrigger="<C-b>"
+" let g:UltiSnipsJumpBackwardTrigger="<C-z>"
 
 " ALE
 let g:airline#extensions#ale#enabled = 1    " show errors in airline
