@@ -21,8 +21,6 @@ alias -g NUL="> /dev/null 2>&1"
 bindkey fd vi-cmd-mode
 bindkey '^N' clear-screen
 
-[ -d "$HOME/.local/bin" ] && export PATH="$PATH:$HOME/.local/bin"
-
 function ddif {
     echo $(date -d "$1 days")
 }

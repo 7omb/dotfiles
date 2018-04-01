@@ -1,7 +1,14 @@
 #!/bin/sh
 
-DOTFILES=`pwd`
-cd "$HOME"
+DOTFILES=$(pwd)
+cd "$HOME" || exit 1
+
+if [ -e "$HOME/.profile" ]; then
+    echo "$HOME/.profile already exists."
+else
+    ln -s "$DOTFILES/profile" "$HOME/.profile"
+    echo "Configured .profile"
+fi
 
 if [ -e "$HOME/.tmux.conf" ]; then
     echo "$HOME/.tmux.conf already exists."
@@ -46,7 +53,7 @@ else
     echo "Configured vim. Run :PlugInstall to install plugins."
 fi
 
-if [ -e "$HOME/.spacemacs" -o -e "$HOME/.spacemacs.d" ]; then
+if [ -e "$HOME/.spacemacs" ] || [ -e "$HOME/.spacemacs.d" ]; then
     echo "Spacemacs configuration alreay exists"
 else
     ln -s "$DOTFILES/spacemacs.d" "$HOME/.spacemacs.d"

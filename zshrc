@@ -1,7 +1,6 @@
 [[ $- != *i* ]] && return
 
 export ZSH=$HOME/.oh-my-zsh
-export EDITOR=vim
 
 ZSH_THEME=blinks
 ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
