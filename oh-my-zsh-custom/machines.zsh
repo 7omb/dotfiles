@@ -9,3 +9,4 @@ fi
 [ $(uname) = 'Darwin' ] && alias ctags="$(brew --prefix)/bin/ctags"
 
 [ "$(hostname)" = "Klappschloss" ] && export PATH="$PATH:$HOME/git/zeug_cmk/bin"
+[ "$(hostname)" = "Klappschloss" ] && export PYTHONPATH="$PYTHONPATH:$HOME/git/check_mk"

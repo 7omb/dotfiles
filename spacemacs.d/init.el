@@ -331,6 +331,25 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (setq create-lockfiles nil)
   (setq flycheck-checker-error-threshold 2000)
+  ;; Temporary workaround to handle .venv directories in project folders
+  ;; can be removed when pipenv is fully integrated
+  (defun spacemacs//pyvenv-mode-set-local-virtualenv ()
+    "Set pyvenv virtualenv from \".venv\" by looking in parent directories. handle directory or file"
+    (interactive)
+    (let ((root-path (locate-dominating-file default-directory
+                                             ".venv")))
+      (when root-path
+        (let* ((file-path (expand-file-name ".venv" root-path))
+               (virtualenv
+                (if (file-directory-p file-path)
+                    file-path
+                  (with-temp-buffer
+                    (insert-file-contents-literally file-path)
+                    (buffer-substring-no-properties (line-beginning-position)
+                                                    (line-end-position))))))
+          (if (file-directory-p virtualenv)
+              (pyvenv-activate virtualenv)
+            (pyvenv-workon virtualenv))))))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
