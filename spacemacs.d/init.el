@@ -331,6 +331,8 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (setq create-lockfiles nil)
   (setq flycheck-checker-error-threshold 2000)
+  (add-hook 'prog-mode-hook 'spacemacs/toggle-truncate-lines-on)
+  (add-hook 'prog-mode-hook 'spacemacs/toggle-visual-line-navigation-on)
   ;; Temporary workaround to handle .venv directories in project folders
   ;; can be removed when pipenv is fully integrated
   (defun spacemacs//pyvenv-mode-set-local-virtualenv ()
