@@ -335,23 +335,23 @@ you should place your code here."
   (add-hook 'prog-mode-hook 'spacemacs/toggle-visual-line-navigation-on)
   ;; Temporary workaround to handle .venv directories in project folders
   ;; can be removed when pipenv is fully integrated
-  (defun spacemacs//pyvenv-mode-set-local-virtualenv ()
-    "Set pyvenv virtualenv from \".venv\" by looking in parent directories. handle directory or file"
-    (interactive)
-    (let ((root-path (locate-dominating-file default-directory
-                                             ".venv")))
-      (when root-path
-        (let* ((file-path (expand-file-name ".venv" root-path))
-               (virtualenv
-                (if (file-directory-p file-path)
-                    file-path
-                  (with-temp-buffer
-                    (insert-file-contents-literally file-path)
-                    (buffer-substring-no-properties (line-beginning-position)
-                                                    (line-end-position))))))
-          (if (file-directory-p virtualenv)
-              (pyvenv-activate virtualenv)
-            (pyvenv-workon virtualenv))))))
+  ;; (defun spacemacs//pyvenv-mode-set-local-virtualenv ()
+  ;;   "Set pyvenv virtualenv from \".venv\" by looking in parent directories. handle directory or file"
+  ;;   (interactive)
+  ;;   (let ((root-path (locate-dominating-file default-directory
+  ;;                                            ".venv")))
+  ;;     (when root-path
+  ;;       (let* ((file-path (expand-file-name ".venv" root-path))
+  ;;              (virtualenv
+  ;;               (if (file-directory-p file-path)
+  ;;                   file-path
+  ;;                 (with-temp-buffer
+  ;;                   (insert-file-contents-literally file-path)
+  ;;                   (buffer-substring-no-properties (line-beginning-position)
+  ;;                                                   (line-end-position))))))
+  ;;         (if (file-directory-p virtualenv)
+  ;;             (pyvenv-activate virtualenv)
+  ;;           (pyvenv-workon virtualenv))))))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
