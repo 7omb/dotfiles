@@ -10,7 +10,7 @@ HIST_STAMPS=yyyy-mm-dd
 plugins=(vi-mode history extract sudo git z pipenv)
 source "$ZSH/oh-my-zsh.sh"
 
-[ -d "$HOME/.local/bin" ] && PATH="$PATH:$HOME/.local/bin"
+[ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # The next line updates PATH for the Google Cloud SDK.
