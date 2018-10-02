@@ -7,6 +7,8 @@ if type go > /dev/null; then
 fi
 
 [ $(uname) = 'Darwin' ] && alias ctags="$(brew --prefix)/bin/ctags"
+[ $(uname) = 'Darwin' ] && export PATH="/usr/local/opt/llvm/bin:$PATH"
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 [ "$(hostname)" = "Klappschloss" ] && export PATH="$PATH:$HOME/git/zeug_cmk/bin"
 [ "$(hostname)" = "Klappschloss" ] && export PYTHONPATH="$PYTHONPATH:$HOME/git/check_mk"
