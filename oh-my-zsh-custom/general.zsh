@@ -18,7 +18,6 @@ alias -g CA="2>&1 | cat -A"
 alias -g NE="2> /dev/null"
 alias -g NUL="> /dev/null 2>&1"
 
-bindkey fd vi-cmd-mode
 bindkey '^N' clear-screen
 
 function ddif {
