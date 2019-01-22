@@ -336,25 +336,6 @@ you should place your code here."
   (setq flycheck-checker-error-threshold 2000)
   (add-hook 'prog-mode-hook 'spacemacs/toggle-truncate-lines-on)
   (add-hook 'prog-mode-hook 'spacemacs/toggle-visual-line-navigation-on)
-  ;; Workaround for .venv directories from:
-  ;; https://github.com/syl20bnr/spacemacs/issues/10293#issuecomment-384337054
-  (defun spacemacs//pyvenv-mode-set-local-virtualenv ()
-    "Set pyvenv virtualenv from \".venv\" by looking in parent directories. handle directory or file"
-    (interactive)
-    (let ((root-path (locate-dominating-file default-directory
-                                             ".venv")))
-      (when root-path
-        (let* ((file-path (expand-file-name ".venv" root-path))
-               (virtualenv
-                (if (file-directory-p file-path)
-                    file-path
-                  (with-temp-buffer
-                    (insert-file-contents-literally file-path)
-                    (buffer-substring-no-properties (line-beginning-position)
-                                                    (line-end-position))))))
-          (if (file-directory-p virtualenv)
-              (pyvenv-activate virtualenv)
-            (pyvenv-workon virtualenv))))))
   ;; use mypy after pylint
   (with-eval-after-load 'flycheck
     (flycheck-add-next-checker 'python-pylint 'python-mypy))
