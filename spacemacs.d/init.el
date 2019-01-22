@@ -50,7 +50,8 @@ values."
      lsp
      (python :variables
              python-backend 'lsp
-             python-test-runner 'pytest)
+             python-test-runner 'pytest
+             python-enable-yapf-format-on-save t)
      (haskell :variables
               haskell-completion-backend 'intero)
      (go :variables
