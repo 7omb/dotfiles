@@ -336,10 +336,6 @@ you should place your code here."
   (setq flycheck-checker-error-threshold 2000)
   (add-hook 'prog-mode-hook 'spacemacs/toggle-truncate-lines-on)
   (add-hook 'prog-mode-hook 'spacemacs/toggle-visual-line-navigation-on)
-  ;; don't use lsp-ui-flycheck since it doesn't support pylint
-  (setq lsp-ui-flycheck-enable nil)
-  ;; don't use lsp-ui-imenu because the default looks better
-  (setq lsp-ui-imenu-enable nil)
   ;; Workaround for .venv directories from:
   ;; https://github.com/syl20bnr/spacemacs/issues/10293#issuecomment-384337054
   (defun spacemacs//pyvenv-mode-set-local-virtualenv ()
