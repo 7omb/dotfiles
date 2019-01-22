@@ -359,6 +359,9 @@ you should place your code here."
           (if (file-directory-p virtualenv)
               (pyvenv-activate virtualenv)
             (pyvenv-workon virtualenv))))))
+  ;; use mypy after pylint
+  (with-eval-after-load 'flycheck
+    (flycheck-add-next-checker 'python-pylint 'python-mypy))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
