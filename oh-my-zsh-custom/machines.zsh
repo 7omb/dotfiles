@@ -6,8 +6,12 @@ if type go > /dev/null; then
     export PATH=$PATH:$(go env GOPATH)/bin
 fi
 
-[ $(uname) = 'Darwin' ] && alias ctags="$(brew --prefix)/bin/ctags"
+if [ -d "$HOME/.cargo/bin" ]; then
+    export PATH="$HOME/.cargo/bin:$PATH"
+fi
+
 [ $(uname) = 'Darwin' ] && export PATH="/usr/local/opt/llvm/bin:$PATH"
+[ $(uname) = 'Darwin' ] && export PATH="$PATH:$HOME/google-cloud-sdk/bin"
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 [ "$(hostname)" = "Klappschloss" ] && export PATH="$PATH:$HOME/git/zeug_cmk/bin"
