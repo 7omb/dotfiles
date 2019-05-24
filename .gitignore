@@ -1,4 +1,5 @@
 *~
 *.swp
+.spacemacs.env
 vim/.netrwhist
 vim/plugged/**
