@@ -30,7 +30,11 @@ values."
    dotspacemacs-configuration-layer-path '()
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(rust
+   '(dap
+     asm
+     (rust :variables
+           rust-format-on-save t
+           rust-backend '(lsp :variables lsp-rust-server 'rust-analyzer))
      yaml
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
@@ -53,7 +57,7 @@ values."
              python-test-runner 'pytest
              python-enable-yapf-format-on-save t)
      (haskell :variables
-              haskell-completion-backend 'intero)
+              haskell-completion-backend 'lsp)
      (go :variables
          go-tab-width 4
          go-use-gometalinter t flycheck-gometalinter-fast t)
