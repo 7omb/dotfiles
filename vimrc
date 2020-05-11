@@ -43,17 +43,6 @@ Plug 'majutsushi/tagbar'
 Plug 'ervandew/supertab'
 Plug 'w0rp/ale'
 
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-
-" Python
-Plug 'zchee/deoplete-jedi', { 'for': 'python' }
-
 " Haskell
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' } | Plug 'Shougo/vimproc.vim', {'do' : 'make'}

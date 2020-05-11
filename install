@@ -54,13 +54,6 @@ else
     echo "Configured and downloaded Spacemacs."
 fi
 
-if [ -e "$HOME/.ctags" ];then
-    echo "$HOME/.ctags already exists"
-else
-    ln -s "$DOTFILES/ctags" "$HOME/.ctags"
-    echo "Configured ctags."
-fi
-
 if ! command -v ghc; then
     echo "ghc is not installed"
 elif [ -e "$HOME/.ghci" ]; then
