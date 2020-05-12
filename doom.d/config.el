@@ -59,6 +59,10 @@
 (after! lsp-python-ms
   (set-lsp-priority! 'mspyls 1))
 
+(after! python
+  (setq python-shell-interpreter "python"))
+(setq doom-modeline-env-python-command "python")
+
 ;; format with yapf on save (currently only black is supported with format)
 (use-package! yapfify
   :hook (python-mode . yapf-mode)
