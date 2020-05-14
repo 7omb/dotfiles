@@ -61,7 +61,6 @@
 
 (after! python
   (setq python-shell-interpreter "python"))
-(setq doom-modeline-env-python-command "python")
 
 ;; format with yapf on save (currently only black is supported with format)
 (use-package! yapfify
