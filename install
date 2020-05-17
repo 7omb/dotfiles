@@ -46,12 +46,12 @@ else
     echo "Configured vim. Run :PlugInstall to install plugins."
 fi
 
-if [ -e "$HOME/.spacemacs" ] || [ -e "$HOME/.spacemacs.d" ]; then
-    echo "Spacemacs configuration alreay exists"
+if [ -e "$HOME/.doom.d" ]; then
+    echo "Doom configuration alreay exists"
 else
-    ln -s "$DOTFILES/spacemacs.d" "$HOME/.spacemacs.d"
-    git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-    echo "Configured and downloaded Spacemacs."
+    ln -s "$DOTFILES/doom.d" "$HOME/.doom.d"
+    git clone https://github.com/hlissner/doom-emacs ~/.emacs.d
+    echo "Configured and downloaded Doom."
 fi
 
 if ! command -v ghc; then
