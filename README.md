@@ -26,3 +26,5 @@ The status can be checked with:
 Error popups can be tested with:
 
     systemctl --user start failure-popup@git-sync.service
+
+TODO: Popups only support KDE right now
