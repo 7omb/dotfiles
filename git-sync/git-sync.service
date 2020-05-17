@@ -1,0 +1,11 @@
+[Unit]
+Description=Automatically sync git repositories
+OnFailure=failure-popup@%n
+
+[Service]
+Type=simple
+ExecStart=%h/git/dotfiles/git-sync/sync.sh
+Nice=19
+
+[Install]
+WantedBy=git-sync.target
