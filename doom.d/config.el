@@ -34,6 +34,9 @@
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
 
+;; switch to new window after split
+(setq evil-split-window-below t
+      evil-vsplit-window-right t)
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
@@ -68,3 +71,12 @@
   (before-save . (lambda ()
                    (when (eq major-mode 'python-mode)
                      (yapify-buffer)))))
+
+;; use HLS instead of HIE
+(use-package lsp-haskell
+  :ensure t
+  :config
+  (setq lsp-haskell-process-path-hie "haskell-language-server-wrapper")
+  ;; Uncomment to see interactions between lsp client/server
+  ;;(setq lsp-log-io t)
+  )
