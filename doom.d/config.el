@@ -58,12 +58,11 @@
 ;; use rust-analyzer as described in the rust module readme
 (setq rustic-lsp-server 'rust-analyzer)
 
+(setq flycheck-checker-error-threshold 3000)
+
 ;; use mspyls as described in python module readme
 (after! lsp-python-ms
   (set-lsp-priority! 'mspyls 1))
-
-(after! python
-  (setq python-shell-interpreter "python"))
 
 ;; format with yapf on save (currently only black is supported with format)
 (use-package! yapfify
