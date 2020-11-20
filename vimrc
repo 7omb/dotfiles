@@ -166,10 +166,6 @@ endif
 let mapleader=' '
 let maplocalleader=' '
 
-" easy escape with fd
-inoremap fd <esc>
-inoremap <esc> <nop>
-
 " behave nicely with wrapped lines
 nnoremap j gj
 nnoremap k gk
