@@ -60,10 +60,6 @@
 
 (setq flycheck-checker-error-threshold 3000)
 
-;; use mspyls as described in python module readme
-(after! lsp-python-ms
-  (set-lsp-priority! 'mspyls 1))
-
 ;; format with yapf on save (currently only black is supported with format)
 (use-package! yapfify
   :hook (python-mode . yapf-mode)
