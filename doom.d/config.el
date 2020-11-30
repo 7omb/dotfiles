@@ -66,3 +66,23 @@
   (before-save . (lambda ()
                    (when (eq major-mode 'python-mode)
                      (yapify-buffer)))))
+
+;; Custom switch for Checkmks -T option when running pytest
+(use-package! python-pytest
+  :config
+  (transient-define-argument python-pytest:-T ()
+    :description "Test type"
+    :class 'transient-option
+    :key "-T"
+    :argument "-T="
+    :choices '("unit" "integration"))
+  (transient-append-suffix
+    'python-pytest-dispatch
+    '(-2)  ;; insert after all arguments before the command in run tests
+    ["Checkmk"
+     (python-pytest:-T)]))
+
+;; Sync files in Checkmk
+(map! "<f10>" (lambda ()
+                (interactive)
+                (async-shell-command "~/git/zeug_cmk/bin/f12" "*f12*")))
