@@ -82,6 +82,17 @@
     ["Checkmk"
      (python-pytest:-T)]))
 
+;; Custom Magit switches to push to Gerrit
+(use-package! magit
+  :config
+  (defun magit-push-to-gerrit (target)
+    (interactive
+     (let ((target (magit-read-local-branch "Target branch")))
+       (list target)))
+    (magit-command-topdir (concat "git push origin HEAD:refs/for/" target)))
+  (transient-append-suffix 'magit-push "t"
+    '("g" "Push to gerrit" magit-push-to-gerrit)))
+
 ;; Sync files in Checkmk
 (map! "<f10>" (lambda ()
                 (interactive)
