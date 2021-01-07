@@ -93,14 +93,14 @@
     (interactive
      (let ((target (magit-read-local-branch "Target branch")))
        (list target)))
-    (magit-command-topdir (concat "git push origin HEAD:refs/for/" target)))
+    (magit-git-command-topdir (concat "git push origin HEAD:refs/for/" target)))
   (transient-append-suffix 'magit-push "t"
     '("g" "Push to gerrit" magit-push-to-gerrit)))
 
 ;; Sync files in Checkmk
 (map! "<f10>" (lambda ()
                 (interactive)
-                (async-shell-command "~/git/zeug_cmk/bin/f12" "*f12*")))
+                (async-shell-command "WEBPACK_MODE=quick ~/git/zeug_cmk/bin/f12" "*f12*")))
 
 ;; add SPC w . binding for easier window navigation
 (map!
