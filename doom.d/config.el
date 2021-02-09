@@ -60,10 +60,6 @@
 
 (setq flycheck-checker-error-threshold 3000)
 
-(add-hook 'lsp-after-initialize-hook (lambda ()
-                                       (flycheck-add-next-checker 'lsp 'python-mypy)
-                                       (flycheck-add-next-checker 'python-mypy 'python-pylint)))
-
 ;; format with yapf on save (currently only black is supported with format)
 (use-package! yapfify
   :hook (python-mode . yapf-mode)
