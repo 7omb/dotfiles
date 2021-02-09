@@ -97,6 +97,7 @@
 (map! "<f10>" (lambda ()
                 (interactive)
                 (async-shell-command "WEBPACK_MODE=quick ~/git/zeug_cmk/bin/f12" "*f12*")))
+(set-popup-rule! "^\\*f12\\*" :size 10 :quit t) ;; see Dooms popup module for details
 
 ;; add SPC w . binding for easier window navigation
 (map!
