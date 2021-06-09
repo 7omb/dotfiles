@@ -61,11 +61,7 @@
 (setq flycheck-checker-error-threshold 3000)
 
 ;; format with yapf on save (currently only black is supported with format)
-(use-package! yapfify
-  :hook (python-mode . yapf-mode)
-  (before-save . (lambda ()
-                   (when (eq major-mode 'python-mode)
-                     (yapify-buffer)))))
+(add-hook! 'python-mode-hook 'yapf-mode)
 
 ;; Custom switch for Checkmks -T option when running pytest
 (use-package! python-pytest
