@@ -1,6 +1,0 @@
-[Unit]
-Description=Failure popup for %i
-
-[Service]
-Type=oneshot
-ExecStart=%h/git/dotfiles/git-sync/failure.sh %i
