@@ -59,7 +59,7 @@ if ! command -v ghc; then
 elif [ -e "$HOME/.ghci" ]; then
     echo "$HOME/.ghci already exists"
 else
-    ln -s "$DOTFILES/ghci" "$HOME/.ctags"
+    ln -s "$DOTFILES/ghci" "$HOME/.ghci"
     echo "Configured ghci"
 fi
 
