@@ -1,0 +1,6 @@
+# key: script
+# name: stack script
+# --
+#!/usr/bin/env stack
+-- stack --resolver lts-${1:18.10} script
+$0

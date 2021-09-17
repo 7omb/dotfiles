@@ -38,6 +38,9 @@
 (setq evil-split-window-below t
       evil-vsplit-window-right t)
 
+(setq yas-snippet-dirs (append yas-snippet-dirs
+                               '("~/.doom.d/snippets")))
+
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
 ;; - `load!' for loading external *.el files relative to this one
