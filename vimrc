@@ -49,6 +49,9 @@ Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' } | Plug 'Shougo/vimproc.vim', {'
 Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
 Plug 'Twinside/vim-hoogle', { 'for': 'haskell' }
 
+" Idris2
+Plug 'edwinb/idris2-vim'
+
 call plug#end()
 
 " --- General Setup -------------------------------------------------
