@@ -38,6 +38,9 @@
 (setq evil-split-window-below t
       evil-vsplit-window-right t)
 
+;; allow avy to jump to all windows in a frame
+(setq avy-all-windows t)
+
 (setq yas-snippet-dirs (append yas-snippet-dirs
                                '("~/.doom.d/snippets")))
 
