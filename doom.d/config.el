@@ -66,38 +66,6 @@
 
 (setq flycheck-checker-error-threshold 3000)
 
-;; Custom switch for Checkmks -T option when running pytest
-(use-package! python-pytest
-  :config
-  (transient-define-argument python-pytest:-T ()
-    :description "Test type"
-    :class 'transient-option
-    :key "-T"
-    :argument "-T="
-    :choices '("unit" "integration"))
-  (transient-append-suffix
-    'python-pytest-dispatch
-    '(-2)  ;; insert after all arguments before the command in run tests
-    ["Checkmk"
-     (python-pytest:-T)]))
-
-;; Custom Magit switches to push to Gerrit
-(use-package! magit
-  :config
-  (defun magit-push-to-gerrit (target)
-    (interactive
-     (let ((target (magit-read-local-branch "Target branch")))
-       (list target)))
-    (magit-git-command-topdir (concat "git push origin HEAD:refs/for/" target)))
-  (transient-append-suffix 'magit-push "t"
-    '("g" "Push to gerrit" magit-push-to-gerrit)))
-
-;; Sync files in Checkmk
-(map! "<f10>" (lambda ()
-                (interactive)
-                (async-shell-command "WEBPACK_MODE=quick ~/git/zeug_cmk/bin/f12" "*f12*")))
-(set-popup-rule! "^\\*f12\\*" :size 10 :quit t) ;; see Dooms popup module for details
-
 ;; add SPC w . binding for easier window navigation
 (map!
  :leader
