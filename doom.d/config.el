@@ -64,8 +64,6 @@
 ;; use rust-analyzer as described in the rust module readme
 (setq rustic-lsp-server 'rust-analyzer)
 
-(setq flycheck-checker-error-threshold 3000)
-
 ;; add SPC w . binding for easier window navigation
 (map!
  :leader
