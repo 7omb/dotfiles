@@ -3,7 +3,7 @@
 export EDITOR=vim
 export ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME=blinks
+ZSH_THEME=intheloop
 ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
 HIST_STAMPS=yyyy-mm-dd
 
