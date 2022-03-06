@@ -15,9 +15,17 @@
   };
 
   fileSystems."/" = {
-    device = "/dev/disk/by-label/nixos";
+    device = "/dev/disk/by-uuid/db203bef-a852-4949-a673-6bd5940569e4";
     fsType = "btrfs";
-    options = ["compress=zstd" "space_cache" "noatime"];
+    options = [ "subvol=nixos" "ssd" "compress=zstd" "noatime" "space_cache" ];
+  };
+
+  boot.initrd.luks.devices."luks".device = "/dev/disk/by-uuid/7f95d70d-0fad-48c8-8733-e6f109eaae9f";
+
+  fileSystems."/home" = {
+    device = "/dev/disk/by-uuid/db203bef-a852-4949-a673-6bd5940569e4";
+    fsType = "btrfs";
+    options = [ "subvol=home" "ssd" "compress=zstd" "noatime" "space_cache" ];
   };
 
   fileSystems."/boot" = {
