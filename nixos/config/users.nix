@@ -38,6 +38,11 @@
         userName = "Tom Bärwinkel";
         userEmail = "dev@baerwinkel.org";
       };
+
+      programs.emacs = {
+        enable = true;
+        extraPackages = (epkgs: [epkgs.vterm]);
+      };
     };
 
     # Install packages to /etc/profiles (default is ~/.nix-profile)

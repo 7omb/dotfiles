@@ -7,7 +7,6 @@
     anki
     brave
     direnv
-    emacs
     evince
     gnumake
     gnupg
