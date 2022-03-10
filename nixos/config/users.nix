@@ -19,6 +19,7 @@
         cabal2nix
         cabal-install
         elmPackages.elm
+        entr # run a command when files change
         ghc
         (haskell-language-server.override { supportedGhcVersions = [ "8107" ]; })
         idris2
