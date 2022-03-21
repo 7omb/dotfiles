@@ -46,6 +46,5 @@
 ;; our package manager can't deal with; see raxod502/straight.el#279)
 ;(package! builtin-package :recipe (:branch "develop"))
 
-;; idris2-mode is not part of the Doom configuration (yet)
-(package! idris2-mode
-  :recipe (:local-repo "/home/tb/git/idris2-mode"))
+(package! emacs-makefile-runner
+  :recipe (:host github :repo "danamlund/emacs-makefile-runner"))
