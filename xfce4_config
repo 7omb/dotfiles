@@ -1,0 +1,58 @@
+#!/bin/sh
+
+# Backup xfce4 config to the dotfiles or install the xfce4 config
+# to ~/.config/xfce4.
+#
+# USAGE:
+#   xfce4_config (--backup|--install)
+
+set -eu
+
+CONFIG_DIR=$HOME/.config/xfce4
+DOTFILES_DIR=$HOME/git/dotfiles/xfce4
+
+if ! command -v xfce4-about >/dev/null 2>&1; then
+    echo "xfce4 not installed"
+    exit 2
+fi
+
+if ! [ -d "$CONFIG_DIR" ]; then
+    echo "no xfce4 found in $CONFIG_DIR"
+    exit 3
+fi
+
+XFCE_FILES="helpers.rc panel terminal"
+
+XFCONF_DIR="xfconf/xfce-perchannel-xml"
+XFCONF_FILES="keyboards.xml xfce4-keyboard-shortcuts.xml xfce4-panel.xml xfce4-power-manager.xml xfce4-session.xml xfwm4.xml xsettings.xml"
+
+backup_config() {
+    for f in $XFCE_FILES; do
+        cp -r "$CONFIG_DIR/$f" "$DOTFILES_DIR"
+    done
+    for f in $XFCONF_FILES; do
+        cp -r "$CONFIG_DIR/$XFCONF_DIR/$f" "$DOTFILES_DIR/$XFCONF_DIR/$f"
+    done
+}
+
+install_config() {
+    for f in $XFCE_FILES; do
+        cp -r "$DOTFILES_DIR" "$CONFIG_DIR/$f"
+    done
+    for f in $XFCONF_FILES; do
+        cp -r "$DOTFILES_DIR/$XFCONF_DIR/$f" "$CONFIG_DIR/$XFCONF_DIR/$f"
+    done
+}
+
+case ${1-unknown} in
+    --backup)
+        backup_config
+        ;;
+    --install)
+        install_config
+        ;;
+    *)
+        echo "unknown command (-b for backup, -i for install)"
+        exit 1
+        ;;
+esac
