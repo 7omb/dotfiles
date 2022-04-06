@@ -4,9 +4,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search nixpkgs wget
   environment.systemPackages = with pkgs; [
-    anki
     brave
-    direnv
     evince
     gnumake
     gnupg
@@ -28,6 +26,7 @@
     telnet
     tmux
     tree
+    usbutils
     vim
     vlc
     wget

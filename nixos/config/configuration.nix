@@ -78,6 +78,7 @@
     # Enable the X11 windowing system.
     xserver = {
       enable = true;
+      exportConfiguration = true;
       layout = "us";
       xkbOptions = "compose:caps";
       desktopManager = {
@@ -91,6 +92,7 @@
     # openssh.enable = true;  /* OpenSSH daemon */
   };
 
+  hardware.enableRedistributableFirmware = true;
   hardware.cpu.intel.updateMicrocode = true;
 
   sound.enable = true;
@@ -99,7 +101,7 @@
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
-  powerManagement.powertop.enable = true;
+  services.tlp.enable = true;
 
   fonts.fonts = with pkgs; [
     source-code-pro

@@ -23,6 +23,7 @@
         ghc
         (haskell-language-server.override { supportedGhcVersions = [ "8107" ]; })
         idris2
+        jdk
         nodejs-16_x
         pipenv
         python310
@@ -37,6 +38,14 @@
         enable = true;
         userName = "Tom Bärwinkel";
         userEmail = "dev@baerwinkel.org";
+      };
+
+      programs.direnv = {
+        enable = true;
+        nix-direnv = {
+          enable = true;
+          enableFlakes = true;
+        };
       };
 
       programs.emacs = {
