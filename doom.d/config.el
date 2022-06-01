@@ -64,6 +64,8 @@
 ;; use rust-analyzer as described in the rust module readme
 (setq rustic-lsp-server 'rust-analyzer)
 
+(setq lsp-ui-sideline-delay 0.5)
+
 ;; add SPC w . binding for easier window navigation
 (map!
  :leader
