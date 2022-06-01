@@ -3,11 +3,7 @@
 {
   users.users.tom = {
     isNormalUser = true;
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-      "wireshark"
-    ];
+    extraGroups = [ "networkmanager" "wheel" "wireshark" ];
     shell = pkgs.zsh;
   };
 
@@ -16,14 +12,14 @@
       xdg.enable = true;
 
       home.packages = with pkgs; [
+        gcc
         cabal2nix
-        cabal-install
         elmPackages.elm
         entr # run a command when files change
-        ghc
-        (haskell-language-server.override { supportedGhcVersions = [ "8107" ]; })
+        haskellPackages.ghc
+        haskellPackages.stack
         idris2
-        jdk
+        jdk11
         nodejs-16_x
         pipenv
         python310
@@ -31,7 +27,6 @@
         rustup
         shellcheck
         sqlite
-        stack
       ];
 
       programs.git = {
@@ -42,15 +37,12 @@
 
       programs.direnv = {
         enable = true;
-        nix-direnv = {
-          enable = true;
-          enableFlakes = true;
-        };
+        nix-direnv = { enable = true; };
       };
 
       programs.emacs = {
         enable = true;
-        extraPackages = (epkgs: [epkgs.vterm]);
+        extraPackages = (epkgs: [ epkgs.vterm ]);
       };
     };
 

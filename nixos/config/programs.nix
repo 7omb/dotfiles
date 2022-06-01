@@ -11,19 +11,19 @@
     htop
     imagemagick
     inkscape
-    inxi  /* cli tool for system information */
+    inxi # cli tool for system information
+    inetutils
     jq
     libreoffice
-    lightlocker  /* simple screen locker */
+    lightlocker # simple screen locker
     lsof
     moka-icon-theme
     nethogs
     networkmanagerapplet
     nmap
     pciutils
-    powertop  /* cli tool to display power usage */
-    (ripgrep.override {withPCRE2 = true;})
-    telnet
+    powertop # cli tool to display power usage
+    (ripgrep.override { withPCRE2 = true; })
     tmux
     tree
     usbutils

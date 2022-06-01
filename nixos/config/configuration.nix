@@ -2,21 +2,21 @@
 
 {
   imports = [
-      ./hardware-configuration.nix
-      ./programs.nix
-      # user account and home manager setup. Don't forget to set a password with ‘passwd’.
-      ./users.nix
-      ./security.nix
-      # Use Home Manager as a NixOS module (add Channel with correct version before):
-      # sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-21.11.tar.gz home-manager
-      # sudo nix-channel --update
-      <home-manager/nixos>
+    ./hardware-configuration.nix
+    ./programs.nix
+    # user account and home manager setup. Don't forget to set a password with ‘passwd’.
+    ./users.nix
+    ./security.nix
+    # Use Home Manager as a NixOS module (add Channel with correct version before):
+    # sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-22.05.tar.gz home-manager
+    # sudo nix-channel --update
+    <home-manager/nixos>
   ];
 
   # Activate nix flakes. For further information see e.g.:
   # https://christine.website/blog/nix-flakes-1-2022-02-21
   nix = {
-    allowedUsers = ["@wheel"];
+    allowedUsers = [ "@wheel" ];
     package = pkgs.nixFlakes;
     extraOptions = ''
       experimental-features = nix-command flakes
@@ -34,15 +34,15 @@
     loader = {
       systemd-boot = {
         enable = true;
-        editor = false;  # fixes a security hole
+        editor = false; # fixes a security hole
       };
       efi.canTouchEfiVariables = true;
     };
 
-    kernelModules = ["tcp_bbr"];
+    kernelModules = [ "tcp_bbr" ];
 
     # Resolves "Unknown Chipset" error from nouveau
-    kernelParams = ["nouveau.modeset=0" "quiet" "splash"];
+    kernelParams = [ "nouveau.modeset=0" "quiet" "splash" ];
 
     # Enable sof-firmware for audio
     extraModprobeConfig = ''
@@ -88,7 +88,7 @@
       displayManager.defaultSession = "xfce";
     };
 
-    printing.enable = true;  /* CUPS printing */
+    printing.enable = true; # CUPS printing
     # openssh.enable = true;  /* OpenSSH daemon */
   };
 
@@ -103,9 +103,7 @@
 
   services.tlp.enable = true;
 
-  fonts.fonts = with pkgs; [
-    source-code-pro
-  ];
+  fonts.fonts = with pkgs; [ source-code-pro ];
 
   # NVIDIA graphics drivers are currently not working retry later:
   # https://nixos.wiki/wiki/Nvidia#booting_with_an_external_display
