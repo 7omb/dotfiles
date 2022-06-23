@@ -66,7 +66,10 @@
 
 (setq lsp-ui-sideline-delay 0.5)
 
+;; use dirvish instead of dired:
 (map! :leader "." #'dirvish)
+;; Save one key:
+(map! :leader :desc "Async cmd in project root" "&" #'projectile-run-async-shell-command-in-root)
 
 ;; add SPC w . binding for easier window navigation
 (map!
