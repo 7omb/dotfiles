@@ -66,6 +66,8 @@
 
 (setq lsp-ui-sideline-delay 0.5)
 
+(map! :leader "." #'dirvish)
+
 ;; add SPC w . binding for easier window navigation
 (map!
  :leader
