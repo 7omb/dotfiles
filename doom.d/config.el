@@ -61,13 +61,15 @@
 ;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
 ;; they are implemented.
 
+(setq lsp-file-watch-threshold 5000)
+
 ;; use rust-analyzer as described in the rust module readme
 (setq rustic-lsp-server 'rust-analyzer)
 
 (setq lsp-ui-sideline-delay 0.5)
 
 ;; use dirvish instead of dired:
-(map! :leader "." #'dirvish)
+(map! :leader "." #'dired-jump)
 ;; Save one key:
 (map! :leader :desc "Async cmd in project root" "&" #'projectile-run-async-shell-command-in-root)
 
