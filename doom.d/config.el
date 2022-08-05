@@ -43,6 +43,8 @@
 
 (setq yas-snippet-dirs (append yas-snippet-dirs
                                '("~/.doom.d/snippets")))
+;; allow nesting of yas snippet invocations:
+(setq yas-triggers-in-field t)
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
@@ -61,12 +63,16 @@
 ;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
 ;; they are implemented.
 
+(setq delete-by-moving-to-trash t)
+
 (setq lsp-file-watch-threshold 5000)
 
 ;; use rust-analyzer as described in the rust module readme
 (setq rustic-lsp-server 'rust-analyzer)
 
 (setq lsp-ui-sideline-delay 0.5)
+(setq company-idle-delay 0.5)
+(setq which-key-idle-delay 0.5)
 
 ;; use dirvish instead of dired:
 (map! :leader "." #'dired-jump)
