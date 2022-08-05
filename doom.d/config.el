@@ -74,6 +74,8 @@
 (setq company-idle-delay 0.5)
 (setq which-key-idle-delay 0.5)
 
+(setq evil-snipe-scope 'whole-visible)
+
 ;; use dirvish instead of dired:
 (map! :leader "." #'dired-jump)
 ;; Save one key:
