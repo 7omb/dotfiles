@@ -4,10 +4,9 @@ setopt hist_save_no_dups
 setopt hist_reduce_blanks
 
 alias vi=vim
-alias ff='find . -type f -name'
-alias fd='find . -type d -name'
 alias h='history'
 alias t='less +F'
+alias rg="rg --hidden --glob='!.git/'"
 
 alias -g G='| grep'
 alias -g H='| head'
