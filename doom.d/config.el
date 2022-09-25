@@ -67,10 +67,13 @@
 
 (setq lsp-file-watch-threshold 5000)
 
+(after! lsp-ui
+  (setq lsp-ui-sideline-enable nil
+        lsp-ui-doc-enable nil))
+
 ;; use rust-analyzer as described in the rust module readme
 (setq rustic-lsp-server 'rust-analyzer)
 
-(setq lsp-ui-sideline-delay 0.5)
 (setq company-idle-delay 0.5)
 (setq which-key-idle-delay 0.5)
 
