@@ -44,6 +44,8 @@
         enable = true;
         extraPackages = (epkgs: [ epkgs.vterm ]);
       };
+
+      home.stateVersion = "18.09";
     };
 
     # Install packages to /etc/profiles (default is ~/.nix-profile)
