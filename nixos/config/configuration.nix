@@ -88,7 +88,12 @@
       displayManager.defaultSession = "xfce";
     };
 
+    avahi = {
+      enable = true;
+      openFirewall = true;
+    };
     printing.enable = true; # CUPS printing
+
     # openssh.enable = true;  /* OpenSSH daemon */
   };
 
