@@ -6,6 +6,7 @@
   environment.systemPackages = with pkgs; [
     brave
     evince
+    gnome.simple-scan
     gnumake
     gnupg
     htop
@@ -26,6 +27,7 @@
     (ripgrep.override { withPCRE2 = true; })
     tmux
     tree
+    unzip
     usbutils
     vim
     vlc
