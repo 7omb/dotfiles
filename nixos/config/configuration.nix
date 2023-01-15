@@ -16,7 +16,7 @@
   # Activate nix flakes. For further information see e.g.:
   # https://christine.website/blog/nix-flakes-1-2022-02-21
   nix = {
-    allowedUsers = [ "@wheel" ];
+    settings.allowed-users = [ "@wheel" ];
     package = pkgs.nixFlakes;
     extraOptions = ''
       experimental-features = nix-command flakes
