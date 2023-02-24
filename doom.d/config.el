@@ -80,7 +80,7 @@
 ;; use avy when "s" is pressed as it is more versatile then snipe
 (remove-hook 'doom-first-input-hook
    #'evil-snipe-mode)
-(map! :n "s" #'avy-goto-char-2)
+(map! :n "s" #'avy-goto-char-timer)
 
 
 ;; use dirvish instead of dired:
