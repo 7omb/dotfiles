@@ -88,8 +88,3 @@
 ;; Save one key:
 (map! :leader :desc "Async cmd in project root" "&" #'projectile-run-async-shell-command-in-root)
 
-;; add SPC w . binding for easier window navigation
-(map!
- :leader
- :prefix "w"
- "." #'+hydra/window-nav/body)
