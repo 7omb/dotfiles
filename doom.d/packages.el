@@ -48,3 +48,6 @@
 
 (package! emacs-makefile-runner
   :recipe (:host github :repo "danamlund/emacs-makefile-runner"))
+
+(package! string-inflection
+  :recipe (:host github :repo "akicho8/string-inflection"))
