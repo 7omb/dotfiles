@@ -88,3 +88,6 @@
 ;; Save one key:
 (map! :leader :desc "Async cmd in project root" "&" #'projectile-run-async-shell-command-in-root)
 
+(map! :leader
+      :desc "Run makefile target"
+      "p m" 'makefile-runner)
