@@ -29,21 +29,30 @@
         sqlite
       ];
 
-      programs.git = {
-        enable = true;
-        userName = "Tom Bärwinkel";
-        userEmail = "dev@baerwinkel.org";
+      programs = {
+        git = {
+          enable = true;
+          userName = "Tom Bärwinkel";
+          userEmail = "dev@baerwinkel.org";
+        };
+
+        direnv = {
+          enable = true;
+          nix-direnv = { enable = true; };
+        };
+
+        emacs = {
+          enable = true;
+          extraPackages = (epkgs: [ epkgs.vterm ]);
+        };
+
+        fzf = {
+          enable = true;
+          enableZshIntegration = true;
+          tmux.enableShellIntegration = true;
+        };
       };
 
-      programs.direnv = {
-        enable = true;
-        nix-direnv = { enable = true; };
-      };
-
-      programs.emacs = {
-        enable = true;
-        extraPackages = (epkgs: [ epkgs.vterm ]);
-      };
 
       home.stateVersion = "18.09";
     };
