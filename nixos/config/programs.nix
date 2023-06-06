@@ -5,6 +5,7 @@
   # $ nix search nixpkgs wget
   environment.systemPackages = with pkgs; [
     brave
+    chromium
     evince
     gnome.simple-scan
     gnumake
@@ -42,11 +43,13 @@
     xsel
   ];
 
-  programs.zsh.enable = true;
+  programs ={
+    zsh.enable = true;
 
-  programs.wireshark = {
-    enable = true;
-    package = pkgs.wireshark;
+    wireshark = {
+      enable = true;
+      package = pkgs.wireshark;
+    };
   };
 
   # Some programs need SUID wrappers, can be configured further or are
