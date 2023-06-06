@@ -21,8 +21,7 @@
         idris2
         jdk11
         nodejs-18_x
-        pipenv
-        python310
+        python311
         racket
         rustup
         shellcheck
