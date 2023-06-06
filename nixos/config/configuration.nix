@@ -29,7 +29,7 @@
     # Use latest kernel to make wifi work with Intel AX201
     kernelPackages = pkgs.linuxPackages_latest;
 
-    tmpOnTmpfs = true;
+    tmp.useTmpfs = true;
 
     loader = {
       systemd-boot = {

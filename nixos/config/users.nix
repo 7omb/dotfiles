@@ -20,7 +20,7 @@
         haskellPackages.stack
         idris2
         jdk11
-        nodejs-16_x
+        nodejs-18_x
         pipenv
         python310
         racket
