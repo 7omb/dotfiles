@@ -7,6 +7,7 @@
     brave
     chromium
     evince
+    file
     gnome.simple-scan
     gnumake
     gnupg

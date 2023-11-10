@@ -3,7 +3,11 @@
 {
   users.users.tom = {
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" "wireshark" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "wireshark"
+    ];
     shell = pkgs.zsh;
   };
 

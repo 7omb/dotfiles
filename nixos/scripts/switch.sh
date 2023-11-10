@@ -1,3 +1,2 @@
-#!/bin/sh
-sudo nix-channel --update
+#!/usr/bin/env sh
 sudo nixos-rebuild switch -I nixos-config="$HOME/git/dotfiles/nixos/config/configuration.nix"
