@@ -108,7 +108,7 @@
 
   services.tlp.enable = true;
 
-  fonts.fonts = with pkgs; [ source-code-pro ];
+  fonts.packages = with pkgs; [ source-code-pro ];
 
   # NVIDIA graphics drivers are currently not working retry later:
   # https://nixos.wiki/wiki/Nvidia
