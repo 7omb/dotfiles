@@ -15,7 +15,7 @@
         system = "x86_64-linux";
         specialArgs = inputs;
         modules = [
-          ./configuration.nix
+          ./hosts/rocket/configuration.nix
           home-manager.nixosModules.home-manager
         ];
       };

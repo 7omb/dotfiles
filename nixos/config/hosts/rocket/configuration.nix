@@ -4,7 +4,6 @@
   imports = [
     ./hardware-configuration.nix
     ./programs.nix
-    # user account and home manager setup. Don't forget to set a password with ‘passwd’.
     ./users.nix
     ./security.nix
   ];
