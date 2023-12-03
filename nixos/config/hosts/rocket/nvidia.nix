@@ -29,20 +29,18 @@
     nvidiaSettings = true;
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.stable;
-    prime = {
-      # Option A: Sync Mode
-      # sync.enable = true;
-      # Option B: Offload Mode
-      offload = {
-        enable = true;
-        enableOffloadCmd = true;
-      };
 
+    prime = {
       intelBusId = "PCI:0:2:0";
       nvidiaBusId = "PCI:1:0:0";
     };
   };
-  # Option B: Offload Mode
+
+  # Option A: Offload Mode
+  hardware.nvidia.prime.offload = {
+    enable = true;
+    enableOffloadCmd = true;
+  };
   environment.systemPackages = [(pkgs.writeShellScriptBin "nvidia-offload" ''
    export __NV_PRIME_RENDER_OFFLOAD=1
    export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
@@ -50,4 +48,6 @@
    export __VK_LAYER_NV_optimus=NVIDIA_only
    exec -a "$0" "$@"
   '')];
+  # Option B: Sync Mode
+  # hardware.nvidia.prime.sync.enable = true;
 }
