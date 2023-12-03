@@ -6,7 +6,6 @@
     ./nvidia.nix
     ./programs.nix
     ./users.nix
-    ./security.nix
   ];
 
   boot = {
@@ -45,6 +44,11 @@
     useDHCP = false;
     hostName = "rocket";
     networkmanager.enable = true;
+
+    firewall = {
+      # allowedTCPPorts = [];
+      # allowedUDPPorts = [];
+    };
 
     # proxy = {
     #   default = "http://user:password@proxy:port/";
