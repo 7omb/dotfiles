@@ -8,7 +8,6 @@
     chromium
     evince
     file
-    git
     gnome.simple-scan
     gnumake
     gnupg
@@ -32,9 +31,7 @@
     tree
     unzip
     usbutils
-    vim
     vlc
-    wget
     xfce.thunar-volman
     xfce.xfce4-battery-plugin
     xfce.xfce4-cpufreq-plugin

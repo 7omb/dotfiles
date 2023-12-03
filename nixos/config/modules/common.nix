@@ -1,6 +1,21 @@
 { config, pkgs, ... }:
 
 {
+  environment = {
+    systemPackages = with pkgs; [
+      git
+      vim
+      wget
+    ];
+    variables.EDITOR = "vim";
+  };
+
+  i18n.defaultLocale = "en_US.UTF-8";
+  console = {
+    font = "Lat2-Terminus16";
+    keyMap = "us";
+  };
+
   nix = {
     settings = {
       allowed-users = [ "@wheel" ];
@@ -12,9 +27,7 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  networking.firewall = {
-    enable = true;
-  };
+  networking.firewall.enable = true;
 
   security = {
     protectKernelImage = true;
