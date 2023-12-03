@@ -8,6 +8,7 @@
     chromium
     evince
     file
+    git
     gnome.simple-scan
     gnumake
     gnupg

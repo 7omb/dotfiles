@@ -1,2 +1,2 @@
 #!/usr/bin/env sh
-sudo nixos-rebuild switch -I nixos-config="$HOME/git/dotfiles/nixos/config/configuration.nix"
+sudo nixos-rebuild switch --flake "$HOME/git/dotfiles/nixos/config#$HOST"

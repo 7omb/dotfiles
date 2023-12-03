@@ -7,10 +7,6 @@
     # user account and home manager setup. Don't forget to set a password with ‘passwd’.
     ./users.nix
     ./security.nix
-    # Use Home Manager as a NixOS module (add Channel with correct version before):
-    # sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-22.05.tar.gz home-manager
-    # sudo nix-channel --update
-    <home-manager/nixos>
   ];
 
   # Activate nix flakes. For further information see e.g.:

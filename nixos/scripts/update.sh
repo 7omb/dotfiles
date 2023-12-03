@@ -1,3 +1,3 @@
 #!/bin/sh
-sudo nix-channel --update
-sudo nixos-rebuild switch -I nixos-config="$HOME/git/dotfiles/nixos/config/configuration.nix"
+nix flake update "$HOME/git/dotfiles/nixos/config"
+sudo nixos-rebuild switch --flake "$HOME/git/dotfiles/nixos/config#$HOST"
