@@ -9,20 +9,8 @@
     ./security.nix
   ];
 
-  # Activate nix flakes. For further information see e.g.:
-  # https://christine.website/blog/nix-flakes-1-2022-02-21
-  nix = {
-    settings.allowed-users = [ "@wheel" ];
-    package = pkgs.nixFlakes;
-    extraOptions = ''
-      experimental-features = nix-command flakes
-    '';
-  };
-
-  nixpkgs.config.allowUnfree = true;
-
   boot = {
-    # Use latest kernel to make wifi work with Intel AX201
+    # Use the latest kernel:
     # kernelPackages = pkgs.linuxPackages_latest;
 
     tmp.useTmpfs = true;

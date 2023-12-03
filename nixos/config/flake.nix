@@ -16,6 +16,7 @@
         specialArgs = inputs;
         modules = [
           ./hosts/rocket/configuration.nix
+          ./modules/common.nix
           home-manager.nixosModules.home-manager
         ];
       };
