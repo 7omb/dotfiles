@@ -3,3 +3,4 @@
 .spacemacs.env
 vim/.netrwhist
 vim/plugged/**
+doom.d/custom.el
