@@ -29,6 +29,7 @@
           { nixpkgs.buildPlatform = "x86_64-linux"; }
           ./hosts/beetle/configuration.nix
           ./modules/common.nix
+          ./modules/server.nix
           ./modules/tom.nix
         ];
       };
