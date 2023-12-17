@@ -18,6 +18,7 @@
           ./hosts/rocket/configuration.nix
           ./modules/common.nix
           ./modules/tom.nix
+          ./modules/tomDesktop.nix
           home-manager.nixosModules.home-manager
         ];
       };

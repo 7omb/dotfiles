@@ -5,7 +5,6 @@
     ./hardware-configuration.nix
     ./nvidia.nix
     ./programs.nix
-    ./users.nix
   ];
 
   security.apparmor.enable = true;

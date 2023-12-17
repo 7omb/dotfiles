@@ -51,7 +51,6 @@
         };
       };
 
-
       home.stateVersion = "18.09";
     };
 
