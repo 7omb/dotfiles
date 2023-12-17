@@ -1,15 +1,10 @@
 { config, lib, pkgs, ... }:
 
 {
-  users.users.tom = {
-    isNormalUser = true;
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-      "wireshark"
-    ];
-    shell = pkgs.zsh;
-  };
+  users.users.tom.extraGroups = [
+    "networkmanager"
+    "wireshark"
+  ];
 
   home-manager = {
     users.tom = { pkgs, ... }: {

@@ -17,7 +17,18 @@
         modules = [
           ./hosts/rocket/configuration.nix
           ./modules/common.nix
+          ./modules/tom.nix
           home-manager.nixosModules.home-manager
+        ];
+      };
+      beetle = nixpkgs.lib.nixosSystem {
+        system = "aarch64-linux";
+        specialArgs = inputs;
+        modules = [
+          { nixpkgs.buildPlatform = "x86_64-linux"; }
+          ./hosts/beetle/configuration.nix
+          ./modules/common.nix
+          ./modules/tom.nix
         ];
       };
     };

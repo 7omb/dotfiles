@@ -1,8 +1,6 @@
 { config, lib, pkgs, ... }:
 
 {
-  # List packages installed in system profile. To search, run:
-  # $ nix search nixpkgs wget
   environment.systemPackages = with pkgs; [
     brave
     chromium
@@ -42,20 +40,10 @@
     xsel
   ];
 
-  programs ={
-    zsh.enable = true;
-
+  programs = {
     wireshark = {
       enable = true;
       package = pkgs.wireshark;
     };
   };
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
 }

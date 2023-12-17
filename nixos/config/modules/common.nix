@@ -29,10 +29,7 @@
 
   networking.firewall.enable = true;
 
-  security = {
-    protectKernelImage = true;
-    apparmor.enable = true;
-  };
+  security.protectKernelImage = true;
 
   boot.kernel.sysctl = {
     # The Magic SysRq key is a key combo that allows users connected to the
