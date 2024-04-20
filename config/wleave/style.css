@@ -1,0 +1,45 @@
+
+* {
+  background-image: none;
+}
+window {
+  background-color: rgba(250, 250, 250, 0.6);
+}
+button {
+  color: #0b1536;
+  font-size: 24px;
+  background-color: #e7e7ec;
+  border-style: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 35%;
+  border-radius: 30px;
+  margin: 320px 5px;
+  text-shadow: 0px 0px;
+  box-shadow: 0px 0px;
+}
+
+button:focus, button:active, button:hover {
+  background-color: #b9c9e2;
+  outline-style: none;
+}
+
+#lock {
+  background-image: image(url(".config/wleave/icons/lock.png"));
+}
+
+#logout {
+  background-image: image(url(".config/wleave/icons/logout.png"));
+}
+
+#suspend {
+  background-image: image(url(".config/wleave/icons/suspend.png"));
+}
+
+#shutdown {
+  background-image: image(url(".config/wleave/icons/shutdown.png"));
+}
+
+#reboot {
+  background-image: image(url(".config/wleave/icons/reboot.png"));
+}

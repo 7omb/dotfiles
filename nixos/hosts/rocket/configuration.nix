@@ -7,7 +7,11 @@
     ./programs.nix
   ];
 
-  security.apparmor.enable = true;
+
+  security = {
+    apparmor.enable = true;
+    rtkit.enable = true;
+  };
 
   boot = {
     # Use the latest kernel:
@@ -15,13 +19,21 @@
 
     tmp.useTmpfs = true;
 
+    initrd = {
+      enable = true;
+      systemd.enable = true;
+    };
+
     loader = {
+      timeout = 2;
       systemd-boot = {
         enable = true;
         editor = false; # fixes a security hole
       };
       efi.canTouchEfiVariables = true;
     };
+
+    plymouth.enable = true;
 
     kernelModules = [ "tcp_bbr" ];
 
@@ -59,21 +71,9 @@
   };
 
   services = {
-    # Enable the X11 windowing system.
-    xserver = {
-      enable = true;
-      exportConfiguration = true;
-      layout = "us";
-      xkbOptions = "compose:caps";
-      desktopManager = {
-        xterm.enable = false;
-        xfce.enable = true;
-      };
-      displayManager.defaultSession = "xfce";
-    };
-
     avahi = {
       enable = true;
+      nssmdns = true;
       openFirewall = true;
     };
     printing.enable = true; # CUPS printing
@@ -85,14 +85,11 @@
   hardware.cpu.intel.updateMicrocode = true;
 
   sound.enable = true;
-  hardware.pulseaudio.enable = true;
 
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
   services.tlp.enable = true;
-
-  fonts.packages = with pkgs; [ source-code-pro ];
 
   # Enable automatic updates
   system.autoUpgrade = {

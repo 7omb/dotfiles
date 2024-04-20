@@ -3,6 +3,7 @@ setopt hist_find_no_dups
 setopt hist_save_no_dups
 setopt hist_reduce_blanks
 
+alias ec='emacsclient --create-frame --no-wait'
 alias vi=vim
 alias h='history'
 alias t='less +F'

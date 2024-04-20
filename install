@@ -63,4 +63,24 @@ else
     echo "Configured ghci"
 fi
 
+if ! command -v hyprctl; then
+    echo "Hyprland not found - skipping"
+else
+    mv "$HOME/.config/hypr" "$DOTFILES/backup"
+    ln -s "$DOTFILES/config/hypr" "$HOME/.config"
+    mv "$HOME/.config/kitty" "$DOTFILES/backup"
+    ln -s "$DOTFILES/config/kitty" "$HOME/.config"
+    mv "$HOME/.config/swaylock" "$DOTFILES/backup"
+    ln -s "$DOTFILES/config/swaylock" "$HOME/.config"
+    mv "$HOME/.config/swaync" "$DOTFILES/backup"
+    ln -s "$DOTFILES/config/swaync" "$HOME/.config"
+    mv "$HOME/.config/udiskie" "$DOTFILES/backup"
+    ln -s "$DOTFILES/config/udiskie" "$HOME/.config"
+    mv "$HOME/.config/waybar" "$DOTFILES/backup"
+    ln -s "$DOTFILES/config/waybar" "$HOME/.config"
+    mv "$HOME/.config/wleave" "$DOTFILES/backup"
+    ln -s "$DOTFILES/config/wleave" "$HOME/.config"
+    echo "Configured Hyprland"
+fi
+
 echo "Enjoy!"
