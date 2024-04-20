@@ -73,6 +73,8 @@
       # enableNvidiaPatches = true;
       xwayland.enable = true;
     };
+
+    ssh.startAgent = true;
   };
 
   # hint electron apps to use wayland
