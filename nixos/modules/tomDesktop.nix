@@ -51,6 +51,9 @@
     swayidle      # idle manager
     brightnessctl # backlight control
     pavucontrol   # pulse audio control
+    slurp         # select screen region
+    grim          # take screenshots
+    swappy        # edit screenshots
     udiskie       # udisks2 front-end
     networkmanagerapplet   # nm tray
     swaynotificationcenter # notifications
