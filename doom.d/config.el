@@ -38,6 +38,13 @@
 (setq evil-split-window-below t
       evil-vsplit-window-right t)
 
+;; Use global substitute in evix ex by default
+(setq evil-ex-substitute-global t)
+
+;; Prettify dashboard (add image and hide menu)
+(setq fancy-splash-image (file-name-concat doom-user-dir "splash.png"))
+(setq +doom-dashboard-functions '(doom-dashboard-widget-banner))
+
 ;; allow avy to jump to all windows in a frame
 (setq avy-all-windows t)
 
@@ -78,8 +85,7 @@
 (setq which-key-idle-delay 0.5)
 
 ;; use avy when "s" is pressed as it is more versatile then snipe
-(remove-hook 'doom-first-input-hook
-   #'evil-snipe-mode)
+(remove-hook 'doom-first-input-hook #'evil-snipe-mode)
 (map! :n "s" #'avy-goto-char-timer)
 
 
