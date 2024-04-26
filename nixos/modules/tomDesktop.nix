@@ -55,6 +55,7 @@
     grim          # take screenshots
     swappy        # edit screenshots
     udiskie       # udisks2 front-end
+    wl-clipboard  # clipboard utilities
     networkmanagerapplet   # nm tray
     swaynotificationcenter # notifications
     libnotify
