@@ -10,7 +10,7 @@
     xserver = {
       enable = true;
       exportConfiguration = true;
-      layout = "us";
+      xkb.layout = "us";
     };
 
     greetd = {
@@ -122,7 +122,7 @@
         chromium
         gcc
         cabal2nix
-        dbeaver
+        dbeaver-bin
         elmPackages.elm
         entr # run a command when files change
         haskellPackages.ghc
