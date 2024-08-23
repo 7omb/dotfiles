@@ -90,31 +90,6 @@
     users.tom = { pkgs, ... }: {
       xdg = {
         enable = true;
-        # Override browser entries to use nvidia-offload. Otherwise they show errors and take ages to start.
-        desktopEntries = {
-          "brave-browser" = {
-            name = "Brave";
-            genericName = "Web Browser";
-            exec = "nvidia-offload brave %U";
-            startupNotify = true;
-            terminal = false;
-            icon = "brave-browser";
-            type = "Application";
-            categories = [ "Network" "WebBrowser" ];
-            mimeType = [ "application/pdf" "application/rdf+xml" "application/rss+xml" "application/xhtml+xml" "application/xhtml_xml" "application/xml" "image/gif" "image/jpeg" "image/png" "image/webp" "text/html" "text/xml" "x-scheme-handler/http" "x-scheme-handler/https" "x-scheme-handler/ipfs" "x-scheme-handler/ipns" ];
-          };
-          "chromium-browser" = {
-            name = "Chromium";
-            genericName = "Web Browser";
-            exec = "nvidia-offload chromium %U";
-            startupNotify = true;
-            terminal = false;
-            icon = "chromium";
-            type = "Application";
-            categories = [ "Network" "WebBrowser" ];
-            mimeType = [ "application/pdf" "application/rdf+xml" "application/rss+xml" "application/xhtml+xml" "application/xhtml_xml" "application/xml" "image/gif" "image/jpeg" "image/png" "image/webp" "text/html" "text/xml" "x-scheme-handler/http" "x-scheme-handler/https" "x-scheme-handler/ipfs" "x-scheme-handler/ipns" ];
-          };
-        };
       };
 
       home.packages = with pkgs; [
