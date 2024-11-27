@@ -14,6 +14,7 @@
 ;;      Alternatively, press 'gd' (or 'C-c g d') on a module to browse its
 ;;      directory (for easy access to its source code).
 
+(setenv "LSP_USE_PLISTS" "1")
 (doom! :input
        ;;chinese
        ;;japanese

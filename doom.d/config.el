@@ -72,7 +72,9 @@
 
 (setq delete-by-moving-to-trash t)
 
-(setq lsp-file-watch-threshold 5000)
+(setq lsp-file-watch-threshold 20000)
+(setq flycheck-checker-error-threshold 1000)
+(setq read-process-output-max (* 1024 1024))
 
 (after! lsp-ui
   (setq lsp-ui-sideline-enable nil
