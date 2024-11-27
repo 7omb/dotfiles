@@ -149,7 +149,7 @@
        ;;php               ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more
        ;;purescript        ; javascript, but functional
-       (python +lsp +pyright +poetry +tree-sitter)  ; beautiful is better than ugly
+       (python +lsp +pyright +tree-sitter)  ; beautiful is better than ugly
        ;;qt                ; the 'cutest' gui framework ever
        racket              ; a DSL for DSLs
        ;;rest              ; Emacs as a REST client
@@ -163,7 +163,7 @@
        ;;solidity          ; do you need a blockchain? No.
        ;;swift             ; who asked for emoji variables?
        ;;terra             ; Earth and Moon in alignment for performance.
-       web                 ; the tubes
+       (web +lsp +tree-sitter)    ; the tubes
        (yaml +lsp)         ; JSON, but readable
 
        :email
