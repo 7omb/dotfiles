@@ -84,8 +84,6 @@
   hardware.enableRedistributableFirmware = true;
   hardware.cpu.intel.updateMicrocode = true;
 
-  sound.enable = true;
-
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
