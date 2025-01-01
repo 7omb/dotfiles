@@ -10,104 +10,61 @@
     xserver = {
       enable = true;
       exportConfiguration = true;
-      xkb.layout = "us";
-    };
-
-    greetd = {
-      enable = true;
-      settings = {
-        default_session = {
-          command = "${pkgs.hyprland}/bin/Hyprland";
-          user = "tom";
-        };
+      layout = "us";
+      xkbOptions = "compose:caps";
+      desktopManager = {
+        xterm.enable = false;
+        xfce.enable = true;
       };
+      displayManager.defaultSession = "xfce";
     };
 
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-      wireplumber.enable = true;
-    };
-
-    udisks2.enable = true;
     upower.enable = true;
   };
 
   fonts.packages = with pkgs; [
     source-code-pro
-    nerdfonts   # some nice fonts and icons
   ];
 
   environment.systemPackages = with pkgs; [
-    # hyprland setup:
-    kitty         # terminal
-    swww          # wallpaper
-    waybar        # bar
-    wofi          # launcher
-    wleave        # logout script
-    swaylock      # screen locker
-    swayidle      # idle manager
-    brightnessctl # backlight control
-    pavucontrol   # pulse audio control
-    slurp         # select screen region
-    grim          # take screenshots
-    swappy        # edit screenshots
-    udiskie       # udisks2 front-end
-    wl-clipboard  # clipboard utilities
-    networkmanagerapplet   # nm tray
-    swaynotificationcenter # notifications
-    libnotify
+    # XFCE
+    moka-icon-theme
+    networkmanagerapplet
+    xfce.thunar-volman
+    xfce.xfce4-battery-plugin
+    xfce.xfce4-cpufreq-plugin
+    xfce.xfce4-cpugraph-plugin
+    xfce.xfce4-fsguard-plugin
+    xfce.xfce4-netload-plugin
+    xfce.xfce4-whiskermenu-plugin
+    xsel
 
     # applications
     evince                # PDF viewer
-    system-config-printer # printer gui
-    gnome.simple-scan     # scanning
+    simple-scan           # scanning
     libreoffice           # office
     vlc                   # video
     imagemagick           # images
   ];
 
-  security.pam.services.swaylock = {};
-
   programs = {
-    hyprland = {
-      enable = true;
-      # enableNvidiaPatches = true;
-      xwayland.enable = true;
-    };
-
     ssh.startAgent = true;
-  };
-
-  # hint electron apps to use wayland
-  environment.sessionVariables = {
-    NIXOS_OZONE_WL = "1";
   };
 
   home-manager = {
     users.tom = { pkgs, ... }: {
-      xdg = {
-        enable = true;
-      };
+      xdg.enable = true;
 
       home.packages = with pkgs; [
         brave
-        chromium
         gcc
         cabal2nix
         dbeaver-bin
-        elmPackages.elm
-        entr # run a command when files change
+        entr
         haskellPackages.ghc
         haskellPackages.stack
-        idris2
         ihp-new
-        jdk11
-        nodejs-18_x
-        python311
-        racket
+        python313
         rustup
         shellcheck
         sqlite
@@ -128,7 +85,7 @@
 
         emacs = {
           enable = true;
-          package = pkgs.emacs29-pgtk;
+          package = pkgs.emacs30;
           extraPackages = (epkgs: [ epkgs.vterm ]);
         };
 

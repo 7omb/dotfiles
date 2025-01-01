@@ -6,8 +6,6 @@
     gnumake
     gnupg
     htop
-    imagemagick
-    inkscape
     inxi # cli tool for system information
     inetutils
     jq
@@ -23,11 +21,4 @@
     unzip
     usbutils
   ];
-
-  programs = {
-    wireshark = {
-      enable = true;
-      package = pkgs.wireshark;
-    };
-  };
 }

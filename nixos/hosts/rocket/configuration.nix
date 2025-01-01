@@ -77,6 +77,7 @@
       openFirewall = true;
     };
     printing.enable = true; # CUPS printing
+    journald.extraConfig = "SystemMaxUse=1G";
 
     # openssh.enable = true;  /* OpenSSH daemon */
   };
