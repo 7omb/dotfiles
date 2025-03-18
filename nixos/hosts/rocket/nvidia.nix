@@ -3,9 +3,7 @@
 {
   # https://nixos.wiki/wiki/Nvidia
   services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.opengl = {
-    enable = true;
-  };
+  hardware.graphics.enable = true;
   hardware.nvidia = {
     # Modesetting is required.
     modesetting.enable = true;

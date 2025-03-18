@@ -7,16 +7,19 @@
   ];
 
   services = {
+    displayManager.defaultSession = "xfce";
+
     xserver = {
       enable = true;
       exportConfiguration = true;
-      layout = "us";
-      xkbOptions = "compose:caps";
+      xkb = {
+        layout = "us";
+        options = "compose:caps";
+      };
       desktopManager = {
         xterm.enable = false;
         xfce.enable = true;
       };
-      displayManager.defaultSession = "xfce";
     };
 
     upower.enable = true;
@@ -49,6 +52,7 @@
 
   programs = {
     ssh.startAgent = true;
+    nix-ld.enable = true;
   };
 
   home-manager = {
@@ -65,6 +69,7 @@
         haskellPackages.stack
         ihp-new
         python313
+        uv
         rustup
         shellcheck
         sqlite
