@@ -101,11 +101,6 @@
         };
       };
 
-      services.emacs = {
-        enable = true;
-        startWithUserSession = "graphical";
-      };
-
       home.stateVersion = "18.09";
     };
 
