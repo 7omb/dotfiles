@@ -22,6 +22,7 @@
       };
     };
 
+    fwupd.enable = true;
     upower.enable = true;
   };
 
