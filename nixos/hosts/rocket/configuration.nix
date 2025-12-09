@@ -88,8 +88,6 @@
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
-  services.tlp.enable = true;
-
   # Enable automatic updates
   system.autoUpgrade = {
     enable = true;

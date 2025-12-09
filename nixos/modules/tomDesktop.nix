@@ -7,18 +7,12 @@
   ];
 
   services = {
-    displayManager.defaultSession = "xfce";
-
-    xserver = {
-      enable = true;
-      exportConfiguration = true;
-      xkb = {
-        layout = "us";
-        options = "compose:caps";
-      };
-      desktopManager = {
-        xterm.enable = false;
-        xfce.enable = true;
+    desktopManager.cosmic.enable = true;
+    displayManager = {
+      cosmic-greeter.enable = true;
+      autoLogin = {
+        enable = true;
+        user = "tom";
       };
     };
 
@@ -31,25 +25,24 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    # XFCE
-    moka-icon-theme
-    networkmanagerapplet
-    xfce.thunar-volman
-    xfce.xfce4-battery-plugin
-    xfce.xfce4-cpufreq-plugin
-    xfce.xfce4-cpugraph-plugin
-    xfce.xfce4-fsguard-plugin
-    xfce.xfce4-netload-plugin
-    xfce.xfce4-whiskermenu-plugin
-    xsel
-
     # applications
     evince                # PDF viewer
-    simple-scan           # scanning
     libreoffice           # office
     vlc                   # video
     imagemagick           # images
+
+    wineWowPackages.waylandFull
+
+    chromium
+    android-tools
+    openssh
   ];
+
+  services.udev.packages = [
+    pkgs.android-udev-rules
+  ];
+
+  programs.adb.enable = true;
 
   programs = {
     ssh.startAgent = true;
