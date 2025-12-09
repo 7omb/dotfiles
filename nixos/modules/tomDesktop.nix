@@ -34,18 +34,10 @@
     wineWowPackages.waylandFull
 
     chromium
-    android-tools
     openssh
   ];
 
-  services.udev.packages = [
-    pkgs.android-udev-rules
-  ];
-
-  programs.adb.enable = true;
-
   programs = {
-    ssh.startAgent = true;
     nix-ld.enable = true;
   };
 
