@@ -24,6 +24,18 @@
     source-code-pro
   ];
 
+  virtualisation.docker = {
+    enable = true;
+    storageDriver = "btrfs";
+    rootless = {
+      # run docker in rootless mode:
+      #   enable with: systemctl --user enable --now docker
+      #   check status with: systemctl --user status docker
+      enable = true;
+      setSocketVariable = true;
+    };
+  };
+
   environment.systemPackages = with pkgs; [
     # applications
     evince                # PDF viewer
@@ -35,6 +47,10 @@
 
     chromium
     openssh
+
+    # AI
+    llm-agents.claude-code
+    llm-agents.claudebox
   ];
 
   programs = {
@@ -76,7 +92,7 @@
 
         emacs = {
           enable = true;
-          package = pkgs.emacs30;
+          package = pkgs.emacs-pgtk;
           extraPackages = (epkgs: [ epkgs.vterm ]);
         };
 
