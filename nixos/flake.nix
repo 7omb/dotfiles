@@ -7,10 +7,9 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    llm-agents.url = "github:numtide/llm-agents.nix";
   };
 
-  outputs = { self, nixpkgs, home-manager, llm-agents, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
     nixosConfigurations = {
       rocket = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -21,7 +20,6 @@
           ./modules/tom.nix
           ./modules/tomDesktop.nix
           home-manager.nixosModules.home-manager
-          {nixpkgs.overlays = [ llm-agents.overlays.default ];}
         ];
       };
     };

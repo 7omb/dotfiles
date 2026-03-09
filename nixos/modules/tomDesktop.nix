@@ -47,10 +47,6 @@
 
     chromium
     openssh
-
-    # AI
-    llm-agents.claude-code
-    llm-agents.claudebox
   ];
 
   programs = {
@@ -66,10 +62,13 @@
         gcc
         cabal2nix
         dbeaver-bin
+        devenv
         entr
         haskellPackages.ghc
         haskellPackages.stack
         ihp-new
+        jetbrains.idea-oss
+        ktor-cli
         python313
         uv
         rustup
@@ -81,8 +80,12 @@
       programs = {
         git = {
           enable = true;
-          userName = "Tom Bärwinkel";
-          userEmail = "dev@baerwinkel.org";
+          settings = {
+            user = {
+              name = "Tom Bärwinkel";
+              email = "dev@baerwinkel.org";
+            };
+          };
         };
 
         direnv = {

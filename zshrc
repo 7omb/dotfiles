@@ -11,3 +11,5 @@ plugins=(history extract sudo git z direnv docker fzf)
 source "$ZSH/oh-my-zsh.sh"
 
 [ -d "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

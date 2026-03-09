@@ -6,7 +6,6 @@ call plug#begin('~/.vim/plugged')
 
 " General
 Plug 'wincent/terminus'
-Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'wesQ3/vim-windowswap'
@@ -55,10 +54,6 @@ Plug 'edwinb/idris2-vim'
 call plug#end()
 
 " --- General Setup -------------------------------------------------
-"  Colorscheme
-set background=dark
-colorscheme solarized
-
 " General
 set nobackup            " disable backups
 set noswapfile          " disable swap files
